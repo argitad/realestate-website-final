@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> {{ property.tipi}}</title>
+  <link rel="icon"  href="{% static 'images/icon.png'%}">
+  <link rel="stylesheet" href="{% static 'bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css'%}">
+  <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+
+<body id="prona">
+  <!-- Navbar-->
+ {% include 'Navbar.html' %}
+
+  <!-- End of navbar-->
+
+  <!-- First Container-->
+  <div class="titulli container w-100 mt-5">
+
+
+    <div class="row">
+
+      <div class="col-ms-6 col-lg-6 col-md-6">
+        <h1> Jepet {{ property.category}} per {{ property.tipi }} </h1>
+        <h4><i class="fas fa-map-marker-alt"></i> {{ property.vendndodhja}}</h4>
+      </div>
+
+      <div class=" cmimi col-ms-6 col-lg-6 col-md-6">
+        <h2>{{ property.cmimi}}€ / {{ property.negocimi }}</h2>
+        <h6 class="pt-4">{{ property.kodi_prones }}</h6>
+      </div>
+
+    </div>
+  </div>
+  <!--End of first container-->
+
+  <!--Second Container-->
+  <!-- Carousel-->
+  <div class="container mt-5">
+    <div id="carouselExampleControls" class="carousel slide w-100 " data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8" aria-label="Slide 9"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9" aria-label="Slide 10"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="10" aria-label="Slide 11"></button>
+      </div>
+      <div class="carousel-inner">
+          {% for fotopron in fotopron %}
+        <div class="carousel-item {% if forloop.first %} active {% endif %}">
+          <img src="{{fotopron.imageURL}}" class="d-block w-100 h-25" alt="...">
+        </div>
+{% endfor %}
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      </div>
+      </div>
+    </div>
+
+{#    </div>#}
+{#  </div>#}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-6 col">
+        <div class="row mt-5">
+          <h4 class="mt-3">Pershkrim</h4>
+          <p> {{ property.pershkrim_prones }}</p>
+        </div>
+        <div class="row mt-5">
+          <h4>Detaje te prones</h4>
+          <div class="col mt-3">
+            <h5>Siperfaqja</h5>
+            <p>{{ property.siperfaqa }}m2</p>
+          </div>
+
+          <div class="col mt-3">
+            <h5>Dhoma</h5>
+            <p>{{ property.nrdhoma }}</p>
+          </div>
+
+          <div class="col mt-3">
+            <h5>Tualet</h5>
+            <p>{{ property.nrtualete }}</p>
+          </div>
+        </div>
+          <div class="row ">
+            <div class="col">
+              <h5>Tipi</h5>
+              <p>{{ property.tipi }}</p>
+            </div>
+
+            <div class="col">
+              <h5>Kati</h5>
+              <p>{{ property.kati }}</p>
+            </div>
+
+            <div class="col">
+              <h5>Parking</h5>
+              <p>{{ property.parking }}</p>
+            </div>
+          </div>
+        </div>
+    
+<!-- Kolona tjeter-->
+      <div class="col-lg-4 col-md-4 col-ms-12">
+        <div class="card col-lg-4 border-0 shadow mx-auto w-75 mb-5 ">
+          <div class="lloji my-3 ">
+            <p class="text-center text-white fs-6">agjent</p>
+          </div>
+          <div class="row-cols-1 ">
+            <div class="col-lg-12 mx-auto">
+              <a href="../AgjentPershkrim/{{ property.agjent.agjent_id }}">
+                <img src="{{property.agjent.foto_agjent.url}}" class="img-fluid w-100 " alt="">
+              </a>
+            </div>
+            <div class="col-lg-12 mx-auto">
+              <div class="card-body">
+                <div class="card-title">
+                  <p class="fs-4 text-center text-capitalize fw-bolder">{{property.agjent.name_surname}}</p>
+                  <div class="row text-secondary">
+                    <div class="col-lg-6 col-sm-12">
+                      <a href="emilto:{{property.agjent.email_agjent}}">
+                        <i class="far fa-envelope"> &nbsp; {{property.agjent.email_agjent}}</i>
+                      </a>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                      <a href="tel:{{property.agjent.tel_1_agjent}}">
+                        <i class="fa fa-phone"> {{property.agjent.tel_1_agjent}}</i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <hr>
+  
+  <div class="container">
+  <div class="row">
+
+      <h4 id="similar" class="mt-4">Prona te ngjashme</h4>  
+
+  <div class="row">
+
+
+     <div class="col-lg-6 col-md-6 col-ms-12">
+      <div class="card  mt-3 me-5" id="pronangjashme1">
+          <a href="../prona/{{ prona.id_prones }}">
+            <img src="{{ property.foto_prones.url }}" class="card-img-top img-fluid img-responsive" alt="">
+            <span class="badge  badge-danger">{{ property.tipi }} </span>
+          </a>
+
+          <div class="card-body">
+            <h5 class="card-title">{{ property.cmimi }}€</h5>
+            <h6>{{ prona.tipi }}  {{ property.nrdhoma }} + {{ property.nrtualete }}</h6>
+            <p class="card-text"><small class="text-muted"><i class="fas fa-map-marker-alt"></i></small>
+            {{ property.vendndodhja }}  </p>
+
+            <p class="card-text text-end"><small class="text-muted">{{ property.kodi_prones }}</small></p>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-md-6 col-ms-12">
+      <div class="card  mt-3 mb-5" id="pronangjashme2">
+          <a href="../prona/{{ prona.id_prones }}">
+            <img src="{{ property.foto_prones.url }}" class="card-img-top img-fluid img-responsive" alt="">
+            <span class="badge  badge-danger">{{ property.tipi }} </span>
+          </a>
+
+          <div class="card-body">
+            <h5 class="card-title">{{ property.cmimi }}€</h5>
+            <h6>{{ prona.tipi }}  {{ property.nrdhoma }} + {{ property.nrtualete }}</h6>
+            <p class="card-text"><small class="text-muted"><i class="fas fa-map-marker-alt"></i></small>
+            {{ property.vendndodhja }}  </p>
+
+            <p class="card-text text-end"><small class="text-muted">{{ property.kodi_prones }}</small></p>
+
+          </div>
+
+        </div>
+      </div>
+
+
+</div>
+
+</div>
+
+     </div>
+
+
+       <!--hap footer-->
+   {% include 'Footer.html' %}
+
+  <!--mbyll footer-->
+  <script src="{% static 'bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js'%}"></script>
+</body>
+
+</html>

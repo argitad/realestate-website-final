@@ -1,0 +1,76 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-color: rgb(20,230, 230);
+}
+
+
+.container-fluid .navbar-brand img {
+    height: 80px;
+    background-size: cover;
+    margin-left: 100px;
+}
+
+.about_img .card {
+    height: 500px;
+    background-image: url('../images/about.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position-y: bottom;
+}
+
+
+.container .who_we_are hr,
+.container .our_purpose .row .txt hr {
+    width: 70px;
+    border: 1.5px solid;
+    margin-top: -20px;
+    color: rgb(12, 12, 12);
+    opacity: .6;
+}
+
+.container .who_we_are .fs-2,
+.container .card .fs-2,
+.container .our_purpose .fs-2 {
+    color: #4b423b;
+}
+
+.card,
+.img-fluid {
+    height: 400px;
+}
+
+.our_purpose .txt {
+    min-height: 500px;
+}
+
+.our_purpose .img-fluid {
+    min-height: 300px;
+}
+
+
+.who_we_are,
+.who_choose_us,
+.our_purpose
+ {
+    margin-top: 150px;
+}
+
+.container-fluid .kolona .row {
+    position: relative;
+    right: 150px;
+    margin-top: 50px;
+}
+
+.container-fluid .kolona .row .col-lg-4 {
+    margin: 10px 0;
+}
+
+
+

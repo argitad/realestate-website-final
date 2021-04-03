@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+{% load static %}
+
+<head>
+    <title>Kontakt</title>
+    <link rel="icon"  href="{% static 'images/icon.png'%}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/Kontakt.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+
+<!--navbar-->
+{% include 'Navbar.html' %}
+<!--mbyll navbar-->
+
+
+<!--Title + Horizontal Line-->
+<div class="horizontal_line">
+    <p class="fs-2 h-25 fw-bolder text-center">Contact Us</p>
+    <hr class="mx-auto  pb-1 fw-bolder "/>
+
+    <p class="fs-6 text-center mx-auto w-50">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+        industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    </p>
+</div>
+<!--Mbyll Title + Horizontal Line-->
+
+
+{# shfaq nje mesazh ne faqen e web-it pasi dergojm emeilin #}
+{% if messages %}
+    {% for message in messages %}
+        <div class="x alert alert-success" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+{# mbyll komentin pasi dergojm emeilin #}
+
+
+<!--hap Contact-->
+<div class="container my-5 ">
+    <div class="contact_us">
+        <div class="row">
+            <div class="col-lg-5 col-sm-12 h-auto text-center   pt-4">
+                <i class="fa fa-mail-bulk text-white fs-1"></i>
+                <p class="text-capitalize text-white pt-4 fw-bold fs-2"> contact us</p>
+                <div class="">
+                    <ul class="list-unstyled">
+                        <li class="">
+                            <p class="fs-4 text-white" style="margin-bottom: 5px;">Adresa : </p>
+                            <p class="text-white">Tirane, Albania</p>
+                        </li>
+                        <li class="">
+                            <p class="fs-4 text-white" style="margin-bottom: 5px;">Telefon : </p>
+                            <p class="text-white">+355 69 56 786 56</p>
+                        </li>
+                        <li class="">
+                            <p class="fs-4 text-white" style="margin-bottom: 5px;">Email : </p>
+                            <p class="text-white">realestate@gmail.com</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!--form-->
+            <form action="http://127.0.0.1:8000/Kontakt" method="post" class="col-lg-7 col-sm-12">
+                {% csrf_token %}
+                <div class="row  px-3">
+                    <div class="col-6">
+                        <label for="InputName" class="form-label mt-4 ">Full Name</label>
+                        <input type="text" name="full_name" class="form-control w-100" required
+                               placeholder="enter your name">
+                    </div>
+                    <div class="col-6">
+                        <label for="InputEmail" class="form-label mt-4">Email</label>
+                        <input type="email" name="email" class="form-control w-100" required
+                               placeholder="enter your email">
+                    </div>
+                </div>
+                <div class="row  px-3">
+                    <div class="col-6">
+                        <label for="InputEmail" class="form-label mt-4">Addres</label>
+                        <input type="text" name="adresa" class=" form-control w-100" required
+                               placeholder="enter your addres">
+                    </div>
+                    <div class="col-6">
+                        <label for="InputName" class="form-label mt-4">Phone</label>
+                        <input type="tel" name="telefon" class="form-control w-100" required
+                               placeholder="enter your phone number">
+                    </div>
+                </div>
+                <div class="row px-3">
+                    <div class="col-12">
+                        <label for="FormControlTextarea" class="form-label mt-4">Your Message</label>
+                        <textarea class="form-control" name="mesazhi" rows="3"
+                                  placeholder="type something..."></textarea>
+                        <p class="mt-2">The field with (<span class="form-label"></span>) is required.</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center my-4">
+                    <button class="btn text-capitalize text-light" type="submit">send message</button>
+                </div>
+            </form>
+            <!--end form-->
+
+        </div>
+    </div>
+</div>
+<!--mbyll Contact-->
+
+
+<!--hap footer-->
+{% include 'Footer.html' %}
+<!--mbyll footer-->
+
+
+<!-- Aime.js-->
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+
+<script src="{% static 'js/Kontakt.js' %}"></script>
+
+<script src="{% static 'bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js' %}">
+
+</script>
+</body>
+
+</html>

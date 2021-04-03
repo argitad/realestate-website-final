@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <title></title>
+        <link rel="icon"  href="{% static 'images/icon.png'%}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+    <link rel="stylesheet" href="{% static 'bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+</head>
+
+<body id="listaepronave" class="bg-light">
+
+<!--navbar-->
+{% include 'Navbar.html' %}
+<!--mbyll navbar-->
+
+
+<!--mbyllje per pjesen hyrese -->
+
+
+<!--listimi i gjith agjenteve-->
+<div class="listimi_rresht_1 container text-center">
+    {% if q  %}
+      <h3 class="mt-5">Rezultati i kerkimit per prona ne: {{ q }}</h3>
+     {% for z in z %}
+
+<div class="card w-25 mt-5 mx-auto ">
+                <a href="../prona/{{z.id_prones }}">
+                    <img src="{{ z.foto_prones.url }}" class="h-25 card-img-top img-fluid img-responsive"
+                         alt="msh">
+                    <span class="badge  badge-danger fs-6">
+                                {{ z.tipi }} </span>
+                </a>
+                <a href="">
+                </a>
+                <div class="card-body">
+
+                    <h5 class="card-title text-start">{{ z.cmimi }}€</h5>
+                    <h6 class="text-start">{{ z.tipi }} {{z.nrdhoma }} + {{ z.nrtualete }}</h6>
+                    <p class="card-text text-start"><small class="text-muted"><i class="fas fa-map-marker-alt"></i>
+                        {{z.vendndodhja }}</small></p>
+                    <p class="card-text text-end"><small class="text-muted">{{ z.kodi_prones }}</small></p>
+
+                </div>
+            </div>
+    {% endfor %}
+    {% else %}
+      <h1> try again</h1>
+    {% endif %}
+
+</div>
+
+<!--hap footer-->
+{% include 'Footer.html' %}
+<!--mbyll footer-->
+
+<script src="{% static 'bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

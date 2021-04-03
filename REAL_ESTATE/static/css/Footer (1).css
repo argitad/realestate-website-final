@@ -1,0 +1,32 @@
+footer
+ {
+    margin-top: 150px;
+}
+
+
+footer {
+    background-color: #363636;
+}
+
+.container-fluid .kolona .row {
+    position: relative;
+    right: 150px;
+    margin-top: 50px;
+}
+
+.container-fluid .kolona .row .col-lg-4 {
+    margin: 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .container-fluid .kolona .row {
+        position: relative;
+        right: -20px;
+    }
+}
+

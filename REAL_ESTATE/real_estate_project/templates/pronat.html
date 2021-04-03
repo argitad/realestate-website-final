@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ a.category}}</title>
+    <link rel="icon"  href="{% static 'images/icon.png'%}">
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+    <link rel="stylesheet" href="{% static 'bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+</head>
+
+<body id="listaepronave" class="bg-light">
+
+<!--navbar-->
+{% include 'Navbar.html' %}
+<!--mbyll navbar-->
+
+
+<!--mbyllje per pjesen hyrese -->
+
+
+<!--listimi i gjith agjenteve-->
+<div class="listimi_rresht_1 container text-center">
+    {%  for a in catlist.pronas %}
+    <p class="fs-2 h-25 mb-5 fw-bolder text-center">Lista e {{ a.category }}ve</p>
+        <hr class="mx-auto w-25 mt-3  pb-1 fw-bolder"/>
+    {% endfor %}
+</div>
+
+
+<!--Listimi i kartave-->
+<div class="container my-5">
+    <div class="row mb-5">
+        <!--prona 1-->
+        {% for a in catlist.pronas%}
+        <div class="col-lg-4 col-md-4 col-ms-12 mb-5">
+            <div class="card mx-auto h-100" style="width: 85%">
+                <a href="{{a.get_absolute_url}}">
+                    <img src="{{ a.foto_prones.url }}" class="h-100 card-img-top img-fluid img-responsive"
+                         alt="msh">
+                    <span class="badge  badge-danger fs-6">
+                                {{ a.tipi }} </span>
+                </a>
+                <a href="">
+                </a>
+                <div class="card-body">
+
+                    <h5 class="card-title text-start">{{ a.cmimi }}€</h5>
+                    <h6 class="text-start">{{ a.category }} {{ a.nrdhoma }} + {{ a.nrtualete }}</h6>
+                    <p class="card-text text-start"><small class="text-muted"><i class="fas fa-map-marker-alt"></i>
+                        {{a.vendndodhja }}</small></p>
+                    <p class="card-text text-end"><small class="text-muted">{{ a.kodi_prones }}</small></p>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<!--mbyll pjesen e listimit-->
+
+<!--Pagination-->
+<!--hap footer-->
+{% include 'Footer.html' %}
+<!--mbyll footer-->
+
+
+<script src="{% static 'bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

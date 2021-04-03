@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate</title>
+    <link rel="icon"  href="{% static 'images/icon.png'%}">
+  <link rel="stylesheet" href="{%  static 'bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css'%}">
+  <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'https://unpkg.com/aos@next/dist/aos.css' %}"/>
+</head>
+
+<body id="home">
+  <!-- First Container-->
+  <!-- Navbar-->
+
+  {% include 'Navbar.html' %}
+
+  <!-- End of Navbar-->
+
+  <!-- Header-->
+
+  <img src="{% static 'images\home.jpg'%}" alt="home" id="mainphoto" class="img-fluid img-responsive ">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="center col-lg-6 col-md-6 col-ms-12 text-center" style="color: #363636">
+        <h1>Real Estate</h1>
+        <h3 class="title_home" >Prona juaj ideale!</h3>
+      </div>
+    </div>
+    <div class="row"  id="search">
+
+{#        <form action="http://127.0.0.1:8000/search" method="get" class="search d-flex w-75 ">#}
+<form method=POST style="position:absolute; top: 70%" action="http://127.0.0.1:8000/search_results">
+    {% csrf_token %}
+
+{#              <select data-select="kategoria" class="form-control w-25 " name="searched">#}
+{#            <option value="" disabled selected>Kategoria e prones</option>#}
+{#              {% for searchbar in category_list %}#}
+{#                  <option data-content="{{searchbar.name}}">{{searchbar.name}}</option>#}
+{#              {% endfor %}#}
+    <div class="row " style="margin-right: 5%">
+        <div class="col " style="margin-left: 35%; margin-right: 0%" >
+             <input  class="w-100  form-control "  name="q" type="search"  placeholder="Kerko qytetin/zonen">
+        </div>
+         <div class="col" style="right: 40%">
+             <button class="btn btn-light m-0" type="submit"><i class="fas fa-search"></i></button>
+         </div>
+    </div>
+{#          </select>#}
+{#    <div class="field has-addons">#}
+{#        <div class="row" style="top: 70%; left: 30%; position: absolute">#}
+{#        <div class="control col">#}
+{#            <input type="search" class="input form-control" style="width: 500px" placeholder=" Kerkoni kodin e prones..." name="searched">#}
+{#        </div>#}
+{#        <div class="control col">#}
+{#            <button class="btn btn-light my-0 " style=""><i class="fas fa-search"></i></button>#}
+{#        </div>#}
+{#    </div>#}
+
+</form>
+{#          <select data-select="kategoria" class="form-control w-25 ">#}
+{#            <option value="" disabled selected>Kategoria e prones</option>#}
+{#              {% for searchbar in category_list %}#}
+{#                  <option data-content="{{searchbar.name}}">{{searchbar.name}}</option>#}
+{#              {% endfor %}#}
+{##}
+{##}
+{##}
+{#            <input  class="w-75  form-control me-2" name="q" type="search" placeholder="Kerko qytetin/zonen">#}
+{#            <button class="btn btn-light m-0" type="submit"><i class="fas fa-search"></i></button>#}
+{#          </select>#}
+{#        </form>#}
+
+    </div>
+
+{#<form method=POST action="http://127.0.0.1:8000/search">#}
+{#    {% csrf_token %}#}
+{#    <div class="field has-addons">#}
+{#        <div class="control">#}
+{#            <input type="text" class="input" placeholder="Search..." name="searched">#}
+{#        </div>#}
+{#        <div class="control">#}
+{#            <button class="button is-dark is-uppercase">Search</button>#}
+{#        </div>#}
+{#    </div>#}
+{#</form>#}
+
+  <!-- End of First Container-->
+
+
+
+  <!-- Second Container-->
+
+  <h3 id="latest" class="mb-1 " style="color: #363636">Pronat me te fundit</h3>
+  <div class="container" id="home_cards_container">
+
+      <div class="row">
+  {% for home in homes|slice:":3" %}
+      <div class="col-lg-4 col-md-4 col-ms-12">
+        <div data-aos="fade-right" class="card w-75 h-75 my-5 mx-auto">
+          <a href="../prona/{{ home.id_prones }}">
+            <img src="{{ home.foto_prones.url }}" class="h-100 card-img-top img-fluid img-responsive" alt="">
+            <span class="badge  badge-danger">{{ home.tipi }} </span>
+          </a>
+
+          <div class="card-body">
+            <h5 class="card-title">{{ home.cmimi }}€</h5>
+            <h6>{{ home.category }} {{ home.nrdhoma }}+1+{{ home.nrtualete }}</h6>
+            <p class="card-text"><small class="text-muted"><i class="fas fa-map-marker-alt"></i></small>
+            {{ home.vendndodhja }}  </p>
+
+            <p class="card-text text-end"><small class="text-muted">{{ home.kodi_prones }}</small></p>
+
+          </div>
+
+        </div>
+      </div>
+{% endfor %}
+
+      </div>
+
+    </div>
+
+  <div class="d-grid  col-2 mx-auto " >
+    <button onclick="document.location='http://127.0.0.1:8000/listprona'" style="margin-top: -5%"  class="btn btn-outline-secondary " type="button">Me
+      shume</button>
+  </div>
+  <!--End of Second Container-->
+
+
+  <!-- Third Container-->
+  <div class="container-fluid " id="kontaineritrete">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-ms-12 ">
+     
+        <div class=" container">
+          <h3 id="shitje" class="text-start mb-3 ">Kerkoni te shisni pronen tuaj?</h3>
+          <p class="text-start " id="kerkoniteshisni">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+            a lacus dolor. Aenean sed scelerisque quam,
+            quis
+            rhoncus magna. Aenean ac sapien eros. Sed vehicula, nibh ut lobortis consequat, felis nulla pharetra felis,
+            volutpat
+            venenatis nulla lacus sed odio. Vivamus sit amet ultrices dui, sit amet suscipit neque. Nulla sit amet purus
+            augue.
+            Aenean at aliquet leo. Integer lacinia ut diam bibendum tristique. Pellentesque habitant morbi tristique
+            senectus et
+            netus et malesuada fames ac turpis egestas.</p>
+
+          <div class="d-grid gap-2 col-lg-5 col-md-6 col-ms-6 mx-auto">
+            <button onclick="document.location='http://127.0.0.1:8000/ListaAgjenteve'" class="btn btn-secondary " id="kontaktoagjent"
+              type="button">Kontakto nje agjent per asistim</button>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <!-- End of Third Container-->
+   <!-- Carousel-->
+  <div id="carouselExampleControls" class="carousel slide container mt-5 " data-bs-ride="carousel">
+   <div class="row">
+      <h3 class="mx-auto mb-3" style="color: #363636">Cfare thone klientet tane...</h3>
+    </div>
+  <div class="carousel-inner  container" style="height: 32vh">
+  {% for test in test %}
+    <div class="carousel-item  {% if forloop.first %} active {% endif %}">
+      <h6 class="testimonial-text text-center  mt-3 " style="margin-left: 10%; margin-right: 10%" >{{ test.testimonials_pershkrim }} </h6>
+          <img class="testimonial-image   mt-3"  style="margin-left: 40%; width: 10%; height: 10%" src="{{ test.imageURL }}" alt="">
+          <em>{{ test.testimonials_vleresim}}</em>
+    </div>
+  {% endfor %}
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <i class="fa fa-chevron-left" style="color: #0B1722; margin-top: 50%"></i>
+{#    <span class="carousel-control-prev-icon" aria-hidden="true"></span>#}
+{#    <span class="visually-hidden" style="opacity: 1">Previous</span>#}
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <i class="fa fa-chevron-right " style="color: #0B1722; margin-top: 50%"></i>
+{#    <span class="carousel-control-next-icon" aria-hidden="true"></span>#}
+{#    <span  style="color: #0a53be">Next</span>#}
+  </button>
+</div>
+</div>
+  <!--hap footer-->
+  {% include 'Footer.html' %}
+
+  <!--mbyll footer-->
+<!-- Aime.js-->
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+
+  <!--aos.js-->
+<script src="{% static 'https://unpkg.com/aos@2.3.1/dist/aos.js' %}"></script>
+<script>
+    AOS.init({
+        duration: 3000, once: true
+    });
+</script>
+
+  <script src="{% static 'js/home.js' %}"></script>
+  <script src="{% static 'bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js'%}"></script>
+  <script src="{% static 'https://code.jquery.com/jquery-3.6.0.min.js'%}"></script>
+
+</body>
+
+</html>

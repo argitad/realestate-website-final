@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+{% load static %}
+
+<head>
+    <title>Lista e agjenteve</title>
+    <link rel="icon"  href="{% static 'images/icon.png'%}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/ListaAgjenteve.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css "
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'https://unpkg.com/aos@next/dist/aos.css' %}"/>
+</head>
+
+<body style="background-color: rgb(250,245,250)">
+
+
+<!--navbar-->
+{% include 'Navbar.html' %}
+<!--mbyll navbar-->
+
+
+<!--pjesa imazhit te fiksuar-->
+<div class="list_agent_img">
+    <img src="{% static 'images/imgmak.jpg' %}" class="img-fluid w-100">
+</div>
+<!--mbyllje per pjesen hyrese-->
+
+
+<!--listimi i gjith agjenteve-->
+<div class="container">
+
+    <div class="listimi text-center">
+        <p class="fs-2 h-25 fw-bolder text-center">Lista e Agjenteve</p>
+        <hr class="mx-auto  pb-1 fw-bolder"/>
+
+        <p class="fs-6 text-center mx-auto w-50">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        </p>
+    </div>
+    <!--Listimi i kartave-->
+    <div class="listimi_kartave">
+        <div class="row">
+            {% for la in page_obj %}
+                <!--aghenti 1-->
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div data-aos="fade-down" class="card col-lg-4 border-0 shadow mx-auto   w-100 my-5 ">
+                        <div class="lloji my-3 ">
+                            <p class="text-center text-white fs-6">agjent</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <a href="../AgjentPershkrim/{{ la.agjent_id }}">
+                                    {# ben klimimin nga listaagjenteve ne agjent pershkrim  ../funksioni/id #}
+                                    <img src="{{ la.imageURL }}" class="img-fluid " alt="" style="height: 200px">
+                                </a>
+                            </div>
+                            <div class="col-lg-12 mx-auto">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <p class="fs-4 text-center text-capitalize fw-bolder">{{ la.name_surname }}</p>
+                                        <div class="row text-center text-secondary mx-auto  h-25">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 text-start">
+                                                <a href="emailto:{{ la.email_agjent }}"
+                                                   class="text-decoration-none text-dark ">
+                                                    <i class="far fa-envelope text-white fw-bold py-2 px-2"
+                                                       style="border-radius: 50%; background-color: rgb(12, 12, 12); width: 32px; height: 32px;">
+
+                                                    </i>
+                                                    &nbsp; {{ la.email_agjent }}
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 text-start pt-2">
+                                                <a href="tel:0{{ la.tel_1_agjent }}"
+                                                   class="text-decoration-none text-dark ">
+                                                    <i class="fa fa-phone text-white fw-bold py-2 px-2"
+                                                       style="border-radius: 50%; background-color: rgb(12, 12, 12); width: 32px; height: 32px; ">
+                                                    </i>
+                                                    &nbsp; 0{{ la.tel_1_agjent }}
+
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+<!--mbyll pjesen e listimit-->
+
+
+<div class="text-center container mt-5">
+    {% if page_obj.has_previous %}
+        <a class="p-2 text-decoration-none text-dark"
+           href={% url 'lista-agjenteve' %}?page={{ page_obj.previous_page_number }}>
+            <i class="fas fa-angle-left me-2 text-dark  fs-5"></i>
+            {{ page_obj.previous_page_number }}</a>
+    {% endif %}
+
+    <a class="p-2 active-btn text-white mx-2 text-decoration-none"
+       style="background-color: #3b393a">{{ page_obj.number }}</a>
+
+    {% if page_obj.has_next %}
+        <a class="p-2 text-decoration-none  text-dark"
+           href={% url 'lista-agjenteve' %}?page={{ page_obj.next_page_number }}>
+            {{ page_obj.next_page_number }}
+            <i class="fas fa-angle-right ms-2  fs-5"></i>
+        </a>
+
+    {% endif %}
+
+</div>
+<!--hap footer-->
+{% include 'Footer.html' %}
+<!--mbyll footer-->
+
+
+<!-- Aime.js-->
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+
+<!--Aos.js-->
+<script src="{% static 'https://unpkg.com/aos@2.3.1/dist/aos.js' %}"></script>
+<script>
+    AOS.init({
+        duration: 3000, once: true
+    });
+</script>
+
+<script src="{% static 'js/ListaAgjenteve.js' %}"></script>
+<script src="{% static 'bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

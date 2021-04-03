@@ -1,0 +1,51 @@
+.card-img-top {
+    cursor: pointer;
+    height: 200px;
+    padding: 20px;
+  }
+
+  .card {
+      position: relative;
+  }
+  .card-list .badge {
+    border-radius: 2px;
+    top: 0;
+    box-shadow: 0 5px 7px rgb(0 0 0 / 22%);
+    font-size: 14px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    z-index: 9;
+}
+
+.badge-danger {
+    background-color: #baad87;
+}
+
+.badge {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    position: absolute;
+    top:5%;
+    left:73%;
+}
+
+.card-agent-photo {
+    position: absolute;
+    z-index: 2;
+    margin-left: 300px;
+    top: 138px;
+
+
+  }
+
+/* *, ::after, ::before {
+    box-sizing: border-box;
+} */

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us</title>
+      <link rel="icon"  href="{% static 'images/icon.png'%}">
+  <link rel="stylesheet" href="{% static 'bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/About.css' %}">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+
+</head>
+
+<body style="background-color: rgb(245, 245,245)">
+
+<!--Navbar-->
+    {% include 'Navbar.html' %}
+    <!--/Navbar-->
+
+
+  <!--koka per About Us-->
+  <div class="about_img">
+    <div class="card  rounded-0">
+      <div class="my-auto ms-5">
+
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <!--koka per About Us-->
+
+
+  <!--who we are-->
+  <div class="container">
+    <div class="who_we_are">
+     <div class="d-inline-flex">
+      <p class="fs-2 text-capitalize pb-4  fw-bolder ">who we are</p>
+     </div>
+        <hr class="mb-3">
+      <p class=" p1 text-dark mt-5  mx-auto">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+        versions of Lorem Ipsum.
+      </p>
+      <p class="p2 text-dark  mx-auto">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+        versions of Lorem Ipsum.
+      </p>
+    </div>
+  </div>
+  <!--mbyll , why we are-->
+
+
+  <!--hap , who choose us-->
+  <div class="container ">
+    <div class="who_choose_us">
+      <div class="card  border-0 h-100  ">
+        <p class=" fs-1 text-capitalize  text-dark fw-bolder text-center pt-5">who choose us</p>
+        <div class="row pb-5">
+          <div class="col-lg-4 col-sm-12 text-center mt-5 my-auto ">
+            <i class="fa fa-chart-line mx-auto fs-1"></i>
+            <p class="fs-3 text-capitalize   text-dark mt-3  fw-bold">wide range of properties</p>
+            <p class="fs-5 text-dark mt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+          </div>
+          <div class=" col-lg-4   col-sm-12 text-center mt-5 my-auto">
+            <i class="fas fa-credit-card mx-auto fs-1"></i>
+            <p class=" fs-3 text-capitalize  text-dark mt-3 fw-bold">financing made easy</p>
+            <p class="fs-5  text-dark mt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+          </div>
+          <div class="  col-lg-4  col-sm-12 text-center mt-5 my-auto">
+            <i class="fas fa-thumbs-up fs-1"></i>
+            <p class=" fs-3 text-capitalize  text-dark  fw-bold mt-3">Trust by thousands</p>
+            <p class="fs-5  text-dark mt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--mbyll , who choose us-->
+
+
+  <!--hap , Our Purpose-->
+  <div class="container">
+    <div class="our_purpose  mx-auto">
+      <div class="row">
+        <div class="txt col-lg-6 col-md-12 col-sm-12 my-auto text-justify">
+          <p class="fs-2 text-capitalize pb-4 fw-bolder">our purpose</p>
+            <hr class="mb-3">
+          <p class="text-dark mt-5">
+            We are dedicated to providing world-class service and market-leading expertise to our clients.
+            We are passionate about providing the extra value that others simply will not. Fanatical integrity
+            and consistently impressive results will be the signature of our service. Our collaborative spirit
+            and desire to grow will help us achieve the goals we set. We will make the families we serve feel special,
+            creating raving fans, and help them truly win. We will succeed because we will not let our clients fail.
+            We are dedicated to providing world-class service and market-leading expertise to our clients.
+            We are passionate about providing the extra value that others simply will not. Fanatical integrity
+            and consistently impressive results will be the signature of our service. Our collaborative spirit
+            and desire to grow will help us achieve the goals we set. We will make the families we serve feel special,
+            creating raving fans, and help them truly win. We will succeed because we will not let our clients fail.
+          </p>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 ">
+          <!--imazhi tek qellimmi-->
+          <img class="img-fluid  w-100 my-5" src="{% static 'images/bg-img.jpg' %}">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--mbyll  OUR PURPOSE-->
+
+  <!--hap footer-->
+{% include 'Footer.html' %}
+  <!--mbyll footer-->
+
+
+  <script src="{% static 'bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

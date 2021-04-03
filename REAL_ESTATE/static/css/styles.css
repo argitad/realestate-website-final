@@ -1,0 +1,575 @@
+*{margin:0;
+padding: 0;}
+
+/* Navbar */
+.nav-item {
+  padding: 3px;
+  font-size: 1em;
+}
+
+#navbarSupportedContent {
+  margin-right: 100px;
+}
+
+.custom_navbar {
+background-color: #abb1af;
+}
+
+/*Home css*/
+.testimonial-text {
+ text-align: center;
+}
+
+.testimonial-image {
+  width: 5%;
+  height: 5%;
+  margin-left: 80%;
+}
+
+
+#mainphoto {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+#home .center {
+  /* color: aliceblue; */
+  color: #0B1722;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#home option[value=""][disabled] {
+  display: none;
+}
+
+#home .search {
+  height: 50px;
+  position: absolute;
+  top: 470px;
+  left: 170px;
+  transform: translateX(-1%);
+}
+
+#home .btn_search {
+  width: 50px;
+}
+
+#home #search input{
+  width: 50%;
+}
+
+datalist {
+  display: none;
+}
+
+#home h3 {
+  text-align: center;
+  /* margin: 50px; */
+  margin-top: 50px;
+}
+
+.card-img-top {
+  cursor: pointer;
+  height: 200px;
+}
+
+#home .card {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);
+}
+
+#housesell{
+margin-left: 50px;
+}
+
+
+#home  .swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#home .swiper-slide {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 300px;
+
+}
+
+#kontaainerikater .swiper-slide p{
+  position: absolute;
+
+}
+
+
+
+/*
+#home_cards_container {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);
+} */
+
+.card {
+  position: relative;
+}
+.card-list .badge {
+border-radius: 2px;
+top: 0;
+box-shadow: 0 5px 7px rgba(0, 0, 0, 22);
+font-size: 14px;
+padding: 10px;
+position: absolute;
+right: 0;
+z-index: 9;
+}
+
+.badge-danger {
+background-color: #baad87;
+}
+
+.badge {
+width: 70px;
+height: 30px;
+display: inline-block;
+padding: .25em .4em;
+padding-left: 20px;
+padding-top: 7px;
+font-size: 15px;
+font-weight: 700;
+line-height: 1;
+text-align: center;
+white-space: nowrap;
+vertical-align: baseline;
+border-radius: .25rem;
+position: absolute;
+top:0%;
+/* left:73%; */
+right: 0%;
+}
+
+#home .btn {
+  margin: 50px 0px;
+
+}
+
+#kerkoniteshisni {
+  shape-outside: circle(50%);
+}
+
+.klient {
+  height: 80%;
+}
+
+#kontaineritrete {
+  background-image: url('../images/sell543614143.5.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /*background-image: cross-fade();*/
+  color: rgb(3, 3, 3);
+ font-weight: bold;
+
+
+}
+
+.mybackground {
+  background-image: url('../images/sell543614143.5.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+#kontaineritrete  {
+  z-index: 4;
+}
+
+#kontaktoagjent {
+  color: rgb(3, 3, 3);
+  font-weight: bold;
+}
+
+#kontaainerikater {
+  width: 70%;
+}
+
+
+/* HTML 1 PRONE+listprona css */
+/* body { */
+  /* background: #000;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000; */
+  /* margin: 0;
+  padding: 0;
+} */
+
+#prona .swiper-container {
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#prona .swiper-slide {
+  background-size: cover;
+  background-position: center;
+  height: 700px;
+}
+
+#prona .gallery-top {
+  height: 500px;
+  width: 100%;
+}
+
+#prona .gallery-thumbs {
+  height: 100px;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+#prona .gallery-thumbs .swiper-slide {
+  height: 100%;
+  opacity: 0.4;
+}
+
+#prona .gallery-thumbs .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+
+
+
+
+#prona .cmimi {
+  text-align: end;
+}
+
+#prona h3 {
+  text-align: center;
+}
+
+#similar {
+  text-align: center;
+}
+.container-fluid .navbar-brand  img {
+  height: 80px;
+  background-size: cover;
+  margin-left: 100px;
+}
+
+.list_agent_img {
+  height: 70vh;
+  background-image: url('https://images.unsplash.com/flagged/photo-1558954157-aa76c0d246c6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80');
+  background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-position: center;
+ background-size: cover;
+
+}
+
+#pronangjashme1 {
+margin-left: 255px;
+width: 50%;
+}
+
+#pronangjashme2 {
+margin-left: 25px;
+width: 50%;
+}
+
+.card-agent-photo {
+  position: absolute;
+  z-index: 2;
+  margin-left: 300px;
+  top: 180px;
+  right: 0px;
+}
+
+/* .filtro {
+  left: 110px;
+  top: 210px;
+}
+.butonifiltrimit {
+  width: 140px;
+  right: 1200px;
+  margin-left: 1000px;
+} */
+
+/* #housesell {
+  position: 50%;
+} */
+
+/* Kontakt css */
+.horizontal_line hr {
+  width: 50px;
+}
+
+.container .contact_us .row .col-lg-5,
+.container .contact_us .row form .btn
+{
+  background-color: #686666;
+}
+
+.container .contact_us .row form .btn {
+  width: 200px;
+}
+
+.container .contact_us .row form {
+  background-color: #b6b5b5;
+}
+
+
+.form-label::after {
+  content:"*";
+  color:red;
+}
+
+textarea {
+    width : 100px;
+}
+
+select{
+  overflow-x: auto;
+  width: 10px;
+}
+
+/* FOOTER */
+footer {
+  background-color: #a0937c;
+}
+
+.container-fluid .kolona .row {
+  position: relative;
+  right: 150px;
+  margin-top: 50px;
+}
+
+.container-fluid .kolona .row .col-lg-4 {
+margin: 10px 0;
+}
+
+@media screen and (max-width : 768px) {
+  footer {
+      width: 100%;
+      overflow: hidden;
+  }
+.container-fluid .kolona .row {
+    position: relative;
+    right: -20px;
+}
+
+
+}
+/* small */
+@media screen and (max-width : 320px){
+
+  #home .center {
+    /* color: aliceblue; */
+    color: #11100e;
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    transform: translate(-20%, -30%);
+  }
+
+  #home .search {
+    /* height: 50px; */
+    position: absolute;
+    top: 400px;
+    left: 53px;
+    transform: translateX(-1%);
+}
+
+#mainphoto {
+
+  height: 500px;
+}
+
+#kontaineritrete p{
+  margin: 0 50px;
+}
+
+#kontaineritrete h3{
+  margin: 50px;
+}
+
+#pronangjashme1 {
+  margin-left: 50px;
+  width: 75%;
+  }
+
+  #pronangjashme2 {
+  margin-left: 50px;
+  width: 75%;
+
+  }
+
+  #prona .cmimi {
+    margin-top: 20px;
+  }
+}
+/* medium */
+@media screen and (min-width: 321px) and (max-width: 375px){
+  #home .center {
+    /* color: aliceblue; */
+    color: #11100e;
+    position: absolute;
+    top: 45%;
+    left: 20%;
+    transform: translate(-20%, -30%);
+  }
+
+  #home .search {
+    height: 50px;
+    position: absolute;
+    top: 450px;
+    left: 50px;
+    transform: translateX(-1%);
+  }
+
+  #pronangjashme1 {
+    margin-left: 40px;
+    width: 75%;
+    }
+
+    #pronangjashme2 {
+    margin-left: 40px;
+    width: 75%;
+    }
+
+    #prona .cmimi {
+      margin-top: 20px;
+    }
+}
+
+/* large */
+@media screen and (min-width: 376px) and (max-width: 425px){
+  #home .center {
+    /* color: aliceblue; */
+    color: #11100e;
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    transform: translate(-20%, -30%);
+  }
+
+  #home .search {
+    height: 50px;
+    position: absolute;
+    top: 450px;
+    left: 50px;
+    transform: translateX(-1%);
+  }
+
+  #pronangjashme1 {
+    margin-left: 70px;
+    width: 65%;
+    }
+
+    #pronangjashme2 {
+    margin-left: 70px;
+    width: 65%;
+    }
+
+    #prona .cmimi {
+      margin-top: 20px;
+    }
+
+    .card-agent-photo {
+      position: absolute;
+      z-index: 2;
+      margin-left: 300px;
+      top: 180px;
+      right: 0px;
+    }
+}
+
+
+/* tablet */
+@media screen and (min-width: 426px) and (max-width: 768px){
+  #home .center {
+    /* color: aliceblue; */
+    color: #11100e;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-20%, -30%);
+  }
+
+  #home .search {
+    height: 50px;
+    position: absolute;
+    top: 430px;
+    left: 60px;
+    transform: translateX(-1%);
+  }
+
+  #pronangjashme1 {
+    margin-left: 120px;
+    width: 55%;
+    }
+
+    #pronangjashme2 {
+    margin-left: 120px;
+    width: 55%;
+    }
+
+    select {
+       /* word-wrap:break-word; */
+
+
+    }
+
+    #prona .cmimi {
+      margin-top: 20px;
+    }
+
+    .card-agent-photo {
+      position: absolute;
+      z-index: 2;
+      margin-left: 300px;
+      top: 50%;
+      right: 0px;
+    }
+
+}
+/* laptop */
+@media screen and (min-width: 769px) and (max-width: 1024px){
+  #home .center {
+    /* color: aliceblue; */
+    color: #11100e;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-20%, -30%);
+  }
+
+  #home .search {
+    height: 50px;
+    position: absolute;
+    top: 450px;
+    left: 120px;
+    transform: translateX(-1%);
+  }
+
+  #pronangjashme1 {
+    margin-left: 100px;
+    width: 75%;
+    }
+
+    #pronangjashme2 {
+    margin-left: 20px;
+    width: 75%;
+    }
+}
+
+
+@media screen and (min-width: 1025px) and (max-width: 1440px){
+
+}

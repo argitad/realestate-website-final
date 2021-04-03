@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.container-fluid .navbar-brand  img {
+  height: 80px;
+  margin-left: 100px;
+}
+
+
+
+ .horizontal_line hr {
+    width: 50px;
+} 
+
+
+.container .contact_us ,
+.horizontal_line  {
+ margin-top: 100px;
+}
+
+.container .contact_us .row .col-lg-5,
+.container .contact_us .row form .btn
+ {
+    background-color: #686666;
+}
+
+.container .contact_us .row form .btn {
+    width: 200px;
+}
+
+.container .contact_us .row form {
+    background-color: #b6b5b5;
+}
+
+
+ .form-label::after { 
+    content:"*";
+    color:red;
+  }
+
+  textarea {
+      width : 100px;
+  }
+
+
+  .container-fluid .kolona .row {
+    position: relative;
+    right: 150px;
+    margin-top: 50px;
+}
+
+.container-fluid .kolona .row .col-lg-4 {
+    margin: 10px 0;
+}
+
+
+
+
+

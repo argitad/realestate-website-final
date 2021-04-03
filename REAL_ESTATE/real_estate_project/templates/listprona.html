@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lista e pronave</title>
+    <link rel="icon"  href="{% static 'images/icon.png'%}">
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+    <link rel="stylesheet" href="{% static 'bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css'%}">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+</head>
+
+<body id="listaepronave" class="bg-light">
+
+    <!--navbar-->
+    {% include 'Navbar.html' %}
+
+    <!--mbyll navbar-->
+
+ 
+    <!--mbyllje per pjesen hyrese -->
+
+
+    <!--listimi i gjith agjenteve-->
+    <div class="listimi_rresht_1 container text-center">
+        <p class="fs-2 mb-5 h-25 fw-bolder text-center">Lista e Pronave</p>
+
+        <form method=POST action="http://127.0.0.1:8000/search">
+    {% csrf_token %}
+    <div class="field has-addons">
+        <div class="row">
+        <div class="control col">
+            <input type="search" class="input form-control" style="width: 500px; margin-left: 50%" placeholder="Kerkoni kodin e prones..." name="searched">
+        </div>
+        <div class="control col">
+             <button class="btn btn-light bg-white my-0 " style=" margin-right: 15%"><i class="fas fa-search"></i></button>
+        </div>
+            </div>
+    </div>
+            {#    <div class="field has-addons">#}
+{#        <div class="row" style="top: 70%; left: 30%; position: absolute">#}
+{#        <div class="control col">#}
+{#            <input type="search" class="input form-control"  placeholder=" Kerkoni kodin e prones..." name="searched">#}
+{#        </div>#}
+{#        <div class="control col">#}
+{#            <button class="btn btn-light my-0 " style=""><i class="fas fa-search"></i></button>#}
+{#        </div>#}
+{#    </div>#}
+</form>
+
+{# <hr class="mx-auto w-25 mt-3  pb-1 fw-bolder"/>#}
+
+        </div>
+
+  
+       
+
+        
+
+        <!--Listimi i kartave-->
+        <div class="container my-5">
+            <div class="row mb-5">
+                <!--prona 1-->
+            {% for listprona in page_obj %}
+
+                <div class="col-lg-4 col-md-4 col-ms-12 mb-5">
+                    <div class="card mx-auto h-100" style="width: 85%">
+                        <a href="../prona/{{ listprona.id_prones }}">
+                            <img src="{{ listprona.foto_prones.url }}" style="height: 30vh" class=" card-img-top img-fluid img-responsive" alt="msh">
+                            <span class="badge  badge-danger fs-6">
+                                {{ listprona.tipi }} </span>
+                        </a>
+                        <a href="">
+
+                            <img class="card-agent-photo  " style="height: 10vh; width: 10vh" src="{{listprona.agjent.foto_agjent.url}}"  >
+
+                        </a>
+                        <div class="card-body">
+
+                            <h5 class="card-title text-start">{{ listprona.cmimi }}€</h5>
+                            <h6 class="text-start">{{ listprona.category }}  {{ listprona.nrdhoma }}+1+{{ listprona.nrtualete }}</h6>
+                            <p class="card-text text-start"><small class="text-muted"><i class="fas fa-map-marker-alt"></i> {{ listprona.vendndodhja }}</small></p>
+                            <p class="card-text text-end"><small class="text-muted">{{ listprona.kodi_prones }}</small></p>
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+    <!--mbyll pjesen e listimit-->
+
+<!--Pagination-->
+<div class="text-center container mb-5">
+    {% if page_obj.has_previous %}
+   <a class="prevpage p-2" href="?page= {{ page_obj.previous_page_number }}">previous</a>
+    {% endif %}
+   <a class="page p-2 my-5" href="" style="background-color: white; color:saddlebrown">{{ page_obj.number }}</a>
+    {% if page_obj.has_next %}
+   <a class="nextpage p-2" href="?page={{ page_obj.next_page_number }}">next</a>
+    {% endif %}
+
+</div>
+
+
+
+  <!--hap footer-->
+    {% include 'Footer.html' %}
+
+  <!--mbyll footer-->
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+    <script src="{% static 'js/listprona.js' %}"></script>
+    <script src="{% static 'bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

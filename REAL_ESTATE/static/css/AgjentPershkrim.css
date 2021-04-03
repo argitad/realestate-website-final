@@ -1,0 +1,114 @@
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ body {
+     background-color: rgb(252,252,252);
+ }
+
+.container-fluid .navbar-brand  img {
+    height: 80px;
+    background-size: cover; 
+    margin-left: 100px;
+}
+
+/*backround fixed*/
+.fixed_img{
+    height: 75vh;
+    background-image: url("../../../../../Downloads/HelloApp/static/images/bg-img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+
+.fixed_img p {
+    padding: 120px;
+}
+
+
+.card {
+    transform: translateY(-7rem);
+}
+
+
+/* madhesia e titullit te agentit*/
+.card .lloji {
+    width: 100px;
+    height: 35px;
+    background-color: rgb(119, 96, 70);
+    margin-left: 50px;
+}
+
+
+.backgroud_img {
+    height: 500px;
+    opacity: .4;
+    background-attachment: fixed;
+}
+
+ .img_title > img {
+    height: 400px;
+    width: 400px;
+}
+
+/* madhesia e titullit te agentit*/
+
+
+/* hapesire ndermjet seksioneve*/
+.container .pronat_agjentit .p,
+.container .pronat_agjentit .row .card,
+.container .gjith_pronat_agjentit .p,
+.container .gjith_pronat_agjentit .row .card{
+    margin-top: 80px;
+}
+
+
+  .container-fluid .kolona .row {
+      position: relative;
+      right: 150px;
+      margin-top: 50px;
+    }
+
+    .container-fluid .kolona .row .col-lg-4 {
+      margin: 10px 0;
+    }
+
+
+    .container .card .row .text-center .row hr {
+        transform: rotate(90deg);
+    }
+
+
+    .container .decription_agent hr,
+     .container .pronat_agjentit hr ,
+    .container .gjith_pronat_agjentit hr{
+        width: 110px;
+        border: 1.5px solid;
+        color: rgb(12, 12, 12);
+        opacity : .6;
+    }
+
+.container-fluid .kolona .row {
+    position: relative;
+    right: 150px;
+    margin-top: 50px;
+}
+
+.container-fluid .kolona .row .col-lg-4 {
+    margin: 10px 0;
+}
+
+  @media screen and (max-width : 992px) {
+    .container .card .row .row .s{
+        margin-bottom: 30px;
+        justify-content: center;
+    }
+
+    .container .card .row .row hr  {
+        display: none;
+    }
+}
