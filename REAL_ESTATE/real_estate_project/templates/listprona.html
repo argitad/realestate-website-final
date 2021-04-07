@@ -68,7 +68,7 @@
             {% for listprona in page_obj %}
 
                 <div class="col-lg-4 col-md-4 col-ms-12 mb-5">
-                    <div class="card mx-auto h-100" style="width: 85%">
+                    <div class="card mx-auto h-100" style="width: 85%;   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);">
                         <a href="../prona/{{ listprona.id_prones }}">
                             <img src="{{ listprona.foto_prones.url }}" style="height: 30vh" class=" card-img-top img-fluid img-responsive" alt="msh">
                             <span class="badge  badge-danger fs-6">
@@ -98,13 +98,13 @@
     <!--mbyll pjesen e listimit-->
 
 <!--Pagination-->
-<div class="text-center container mb-5">
+<div class="text-center container mb-1">
     {% if page_obj.has_previous %}
-   <a class="prevpage p-2" href="?page= {{ page_obj.previous_page_number }}">previous</a>
+   <a class="prevpage p-2 text-decoration-none text-dark" href="?page= {{ page_obj.previous_page_number }}">previous</a>
     {% endif %}
-   <a class="page p-2 my-5" href="" style="background-color: white; color:saddlebrown">{{ page_obj.number }}</a>
+   <a class="page p-2 my-5 text-decoration-none text-white" href="" style="background-color: #3B393A; color:saddlebrown">{{ page_obj.number }}</a>
     {% if page_obj.has_next %}
-   <a class="nextpage p-2" href="?page={{ page_obj.next_page_number }}">next</a>
+   <a class="nextpage p-2 text-decoration-none  text-dark" href="?page={{ page_obj.next_page_number }}">next</a>
     {% endif %}
 
 </div>

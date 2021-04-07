@@ -62,7 +62,10 @@ def prona(request, id):
     fotopron=ImazheProna.objects.filter(prona_title=property)
     img_pronat = ImazheProna.objects.all()
     agjent = Agjent.objects.all()
-    context = {'homes': homes, 'property': property, 'img_pronat': img_pronat, 'agjent': agjent, 'fotopron': fotopron, 'prona': prona}
+    p_tengjashme = Pronat.objects.get(id_prones=id)
+    tries = Pronat.objects.filter(tipi=p_tengjashme.tipi).exclude(id_prones=id)[:3]
+    context = {'homes': homes, 'property': property, 'img_pronat': img_pronat, 'agjent': agjent, 'fotopron': fotopron, 'prona': prona,
+               'tries': tries, 'p_tengjashme': p_tengjashme}
     return render(request, 'prona.html', context)
 
 

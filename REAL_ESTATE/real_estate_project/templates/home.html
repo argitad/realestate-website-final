@@ -24,25 +24,19 @@
 
   <!-- Header-->
 
-  <img src="{% static 'images\home.jpg'%}" alt="home" id="mainphoto" class="img-fluid img-responsive ">
+  <img src="{% static 'images\home.jpg'%}" alt="home" id="mainphoto" class=" img-fluid img-responsive ">
   <div class="container-fluid">
     <div class="row">
-      <div class="center col-lg-6 col-md-6 col-ms-12 text-center" style="color: #363636">
-        <h1>Real Estate</h1>
+      <div class="center mx-auto  col-lg-6 col-md-6 col-ms-12 text-center" style="color: #363636">
+        <h1 >Real Estate</h1>
         <h3 class="title_home" >Prona juaj ideale!</h3>
       </div>
     </div>
     <div class="row"  id="search">
 
-{#        <form action="http://127.0.0.1:8000/search" method="get" class="search d-flex w-75 ">#}
 <form method=POST style="position:absolute; top: 70%" action="http://127.0.0.1:8000/search_results">
     {% csrf_token %}
 
-{#              <select data-select="kategoria" class="form-control w-25 " name="searched">#}
-{#            <option value="" disabled selected>Kategoria e prones</option>#}
-{#              {% for searchbar in category_list %}#}
-{#                  <option data-content="{{searchbar.name}}">{{searchbar.name}}</option>#}
-{#              {% endfor %}#}
     <div class="row " style="margin-right: 5%">
         <div class="col " style="margin-left: 35%; margin-right: 0%" >
              <input  class="w-100  form-control "  name="q" type="search"  placeholder="Kerko qytetin/zonen">
@@ -51,44 +45,12 @@
              <button class="btn btn-light m-0" type="submit"><i class="fas fa-search"></i></button>
          </div>
     </div>
-{#          </select>#}
-{#    <div class="field has-addons">#}
-{#        <div class="row" style="top: 70%; left: 30%; position: absolute">#}
-{#        <div class="control col">#}
-{#            <input type="search" class="input form-control" style="width: 500px" placeholder=" Kerkoni kodin e prones..." name="searched">#}
-{#        </div>#}
-{#        <div class="control col">#}
-{#            <button class="btn btn-light my-0 " style=""><i class="fas fa-search"></i></button>#}
-{#        </div>#}
-{#    </div>#}
 
 </form>
-{#          <select data-select="kategoria" class="form-control w-25 ">#}
-{#            <option value="" disabled selected>Kategoria e prones</option>#}
-{#              {% for searchbar in category_list %}#}
-{#                  <option data-content="{{searchbar.name}}">{{searchbar.name}}</option>#}
-{#              {% endfor %}#}
-{##}
-{##}
-{##}
-{#            <input  class="w-75  form-control me-2" name="q" type="search" placeholder="Kerko qytetin/zonen">#}
-{#            <button class="btn btn-light m-0" type="submit"><i class="fas fa-search"></i></button>#}
-{#          </select>#}
-{#        </form>#}
+
 
     </div>
 
-{#<form method=POST action="http://127.0.0.1:8000/search">#}
-{#    {% csrf_token %}#}
-{#    <div class="field has-addons">#}
-{#        <div class="control">#}
-{#            <input type="text" class="input" placeholder="Search..." name="searched">#}
-{#        </div>#}
-{#        <div class="control">#}
-{#            <button class="button is-dark is-uppercase">Search</button>#}
-{#        </div>#}
-{#    </div>#}
-{#</form>#}
 
   <!-- End of First Container-->
 
@@ -134,10 +96,10 @@
 
 
   <!-- Third Container-->
-  <div class="container-fluid " id="kontaineritrete">
+  <div class="container-fluid" id="kontaineritrete" style="background-image: url(../../static/images/static/images/jozsef-hocza-y5N2HDwagVw-unsplash1.jpg); height: 400px ">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-ms-12 ">
-     
+
         <div class=" container">
           <h3 id="shitje" class="text-start mb-3 ">Kerkoni te shisni pronen tuaj?</h3>
           <p class="text-start " id="kerkoniteshisni">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
@@ -149,11 +111,11 @@
             augue.
             Aenean at aliquet leo. Integer lacinia ut diam bibendum tristique. Pellentesque habitant morbi tristique
             senectus et
-            netus et malesuada fames ac turpis egestas.</p>
+            netus et malesuada.</p>
 
-          <div class="d-grid gap-2 col-lg-5 col-md-6 col-ms-6 mx-auto">
-            <button onclick="document.location='http://127.0.0.1:8000/ListaAgjenteve'" class="btn btn-secondary " id="kontaktoagjent"
-              type="button">Kontakto nje agjent per asistim</button>
+          <div class=" w-75 col-lg-5 col-md-6 col-ms-6 mx-auto" >
+            <button onclick="document.location='http://127.0.0.1:8000/ListaAgjenteve'" class="btn btn-outline-secondary" id="kontaktoagjent"
+              type="button" style=" margin-bottom: 20%; margin-right: 70%">Kontakto nje agjent</button>
           </div>
         </div>
       </div>
@@ -179,13 +141,11 @@
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
       <i class="fa fa-chevron-left" style="color: #0B1722; margin-top: 50%"></i>
-{#    <span class="carousel-control-prev-icon" aria-hidden="true"></span>#}
-{#    <span class="visually-hidden" style="opacity: 1">Previous</span>#}
+
   </button>
   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
       <i class="fa fa-chevron-right " style="color: #0B1722; margin-top: 50%"></i>
-{#    <span class="carousel-control-next-icon" aria-hidden="true"></span>#}
-{#    <span  style="color: #0a53be">Next</span>#}
+
   </button>
 </div>
 </div>
@@ -193,7 +153,7 @@
   {% include 'Footer.html' %}
 
   <!--mbyll footer-->
-<!-- Aime.js-->
+<!-- Anime.js-->
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
 
   <!--aos.js-->

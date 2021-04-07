@@ -17,7 +17,7 @@
 /*backround fixed*/
 .fixed_img{
     height: 75vh;
-    background-image: url("../../../../../Downloads/HelloApp/static/images/bg-img.jpg");
+    background-image: url("../images/static/images/bg-img.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

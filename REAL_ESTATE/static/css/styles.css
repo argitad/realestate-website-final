@@ -200,14 +200,7 @@ right: 0%;
 
 
 /* HTML 1 PRONE+listprona css */
-/* body { */
-  /* background: #000;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000; */
-  /* margin: 0;
-  padding: 0;
-} */
+
 
 #prona .swiper-container {
   width: 100%;
@@ -273,15 +266,15 @@ right: 0%;
 
 }
 
-#pronangjashme1 {
-margin-left: 255px;
-width: 50%;
-}
+/*#pronangjashme1 {*/
+/*margin-left: 255px;*/
+/*width: 50%;*/
+/*}*/
 
-#pronangjashme2 {
-margin-left: 25px;
-width: 50%;
-}
+/*#pronangjashme2 {*/
+/*margin-left: 25px;*/
+/*width: 50%;*/
+/*}*/
 
 .card-agent-photo {
   position: absolute;

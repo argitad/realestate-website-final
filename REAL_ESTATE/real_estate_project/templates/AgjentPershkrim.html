@@ -18,12 +18,55 @@
 <body style="background-color: rgb(245, 245,245)">
 
 <!--navbar-->
-{% include 'Navbar.html' %}
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light  custom_navbar">
+    <div class="container-fluid h-25">
+      <a class="navbar-brand "  href="http://127.0.0.1:8000">
+        <img style="" src="{% static 'images/logo_navv.png'%}" alt="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" style="  margin-right: 100px">
+        <ul class="navbar-nav ms-auto  mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active px-3" aria-current="page" href="http://127.0.0.1:8000">Kreu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active px-3" aria-current="page" href="http://127.0.0.1:8000/About">Rreth nesh</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle px-3" href="http://127.0.0.1:8000/listprona" id="navbarDropdown" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
+              Prona
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                {% for category in category_list%}
+               <li><a class="dropdown-item" href="/pronat/{{category.name}}">{{category.name}}</a></li>
+              {% endfor%}
+                <hr>
+             <li><a class="dropdown-item" href="http://127.0.0.1:8000/listprona">Te gjitha</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active px-3" aria-current="page" href="http://127.0.0.1:8000/ListaAgjenteve">Agjente</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active px-3" aria-current="page" href="http://127.0.0.1:8000/Kontakt">Kontakt</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
 <!--mbyll navbar-->
 
 
 <!-- background  image per agjentin-->
-<div class="fixed_img">
+<div class="fixed_img" style="background-image: url(../../static/images/static/images/bg-img.jpg)">
 </div>
 <!-- mbyll background  image per agjentin-->
 
@@ -60,12 +103,7 @@
                                 &nbsp; &nbsp; 0{{ agjent.tel_1_agjent }}
                             </a>
                         </li>
-                        {% comment %}<li class="py-2">
-                            <a href="tel:{{ agjent.tel_2_agjent }}" class=" text-dark text-decoration-none">
-                                <i class="fa fa-fax fs-5 text-dark   ms-2"></i>
-                                 &nbsp; &nbsp; {{ agjent.tel_2_agjent }}
-                            </a>
-                        </li>{% endcomment %}
+
                         <li class="py-2">
                             <a href="#" class="fs-5  text-dark text-decoration-none ">
                                 <i class="fas fa-map-marker-alt fs-5 text-dark"> </i>
@@ -118,20 +156,25 @@
 
                     <div class="col-lg-4 col-md-4 col-ms-12">
                         <div class="card w-100">
-                            <a href="prona.html">
-                                <img src="{{ pr.imageURL }}" class="card-img-top img-fluid img-responsive"
+                            <a href="../prona/{{ pr.id_prones }}">
+                                <img src="{{ pr.imageURL }}" style="height: 30vh" class="card-img-top img-fluid img-responsive"
                                      alt="msh" style="width:100%; height: 300px">
-                                <span class="badge  badge-danger fs-6"> {{ pr.kategoria }} </span>
+                                <span class="badge  badge-danger fs-6" style="background-color: #baad87;
+                                width: 70px; height: 30px; display: inline-block; padding: .25em .4em; padding-left: 20px;
+                                padding-top: 7px; font-size: 15px; font-weight: 700; line-height: 1; text-align: center;
+                                white-space: nowrap; vertical-align: baseline; border-radius: .25rem; position: absolute;
+                                top:0%; right: 0%;">  {{ pr.tipi }} </span>
                             </a>
                             <a href="">
-                                <img class="card-agent-photo w-25 h-25 " src="{{ agjent.imageURL }}">
+                                <img class="card-agent-photo" style="height: 10vh; width: 10vh; position: absolute;
+                                 z-index: 2; margin-left: 300px; top: 170px; right: 0px" src="{{ agjent.imageURL }}">
                             </a>
                             <div class="card-body">
 
-                                <h5 class="card-title text-start">Cmimi {{ pr.negocimi }}</h5>
-                                <h6 class="text-start">{{ pr.kategoria }} 2+1</h6>
+                                <h5 class="card-title text-start">{{ pr.cmimi }}€</h5>
+                                <h6 class="text-start">{{ pr.category }} {{ pr.nrdhoma }}+1+{{ pr.nrtualete }}</h6>
                                 <p class="card-text text-start"><small class="text-muted"><i
-                                        class="fas fa-map-marker-alt"></i>{{ pr.vendndodhja }}</small></p>
+                                        class="fas fa-map-marker-alt"></i> {{ pr.vendndodhja }}</small></p>
                                 <p class="card-text text-end"><small class="text-muted">{{ pr.kodi_prones }}</small></p>
 
                             </div>
@@ -157,19 +200,26 @@
 
                 <div class="col-lg-4 col-md-4 col-ms-12">
                     <div class="card w-100">
-                        <a href="prona.html">
-                            <img src="{{ pr.imageURL }}" class="card-img-top img-fluid img-responsive" alt="msh" style="width:100%; height: 300px">
-                            <span class="badge  badge-danger fs-6"> {{ pr.kategoria }} </span>
-                        </a>
-                        <a href="">
-                            <img class="card-agent-photo w-25 h-25 " src="{{ agjent.imageURL }}">
-                        </a>
-                        <div class="card-body">
-                            <h5 class="card-title text-start">Cmimi {{ pr.negocimi }}</h5>
-                            <h6 class="text-start">{{ pr.kategoria }} 2+1</h6>
-                            <p class="card-text text-start"><small class="text-muted">
-                                <i class="fas fa-map-marker-alt"></i>{{ pr.vendndodhja }}</small></p>
-                            <p class="card-text text-end"><small class="text-muted">{{ pr.kodi_prones }}</small></p>
+                        <a href="../prona/{{ pr.id_prones }}">
+                         <img src="{{ pr.imageURL }}" style="height: 30vh" class="card-img-top img-fluid img-responsive"
+                                     alt="msh" style="width:100%; height: 300px">
+                                <span class="badge  badge-danger fs-6" style="background-color: #baad87;
+                                width: 70px; height: 30px; display: inline-block; padding: .25em .4em; padding-left: 20px;
+                                padding-top: 7px; font-size: 15px; font-weight: 700; line-height: 1; text-align: center;
+                                white-space: nowrap; vertical-align: baseline; border-radius: .25rem; position: absolute;
+                                top:0%; right: 0%;">  {{ pr.tipi }} </span>
+                            </a>
+                            <a href="">
+                                <img class="card-agent-photo" style="height: 10vh; width: 10vh; position: absolute;
+                                 z-index: 2; margin-left: 300px; top: 170px; right: 0px" src="{{ agjent.imageURL }}">
+                            </a>
+                            <div class="card-body">
+
+                                <h5 class="card-title text-start">{{ pr.cmimi }}€</h5>
+                                <h6 class="text-start">{{ pr.category }} {{ pr.nrdhoma }}+1+{{ pr.nrtualete }}</h6>
+                                <p class="card-text text-start"><small class="text-muted"><i
+                                        class="fas fa-map-marker-alt"></i> {{ pr.vendndodhja }}</small></p>
+                                <p class="card-text text-end"><small class="text-muted">{{ pr.kodi_prones }}</small></p>
                         </div>
                     </div>
                 </div>
